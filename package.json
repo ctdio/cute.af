@@ -1,0 +1,38 @@
+{
+  "name": "cute.af",
+  "version": "1.0.0",
+  "description": "cute.af website",
+  "main": "index.js",
+  "author": "Charlie Duong",
+  "license": "MIT",
+  "scripts": {
+    "start": "next",
+    "generate:links": "node tools/generateLinks"
+  },
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "now": "^15.3.0",
+    "prettier": "^1.17.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  },
+  "lint-staged": {
+    "*.{js,json,mdx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
