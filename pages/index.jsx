@@ -5,12 +5,25 @@ const Page = ({ index }) => {
   return (
     <div className="root">
       <Head>
+        <title>cute.af pics of Mochi</title>
         <link
           href="https://fonts.googleapis.com/css?family=Lato&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/static/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/static/favicon-16x16.png"
+        />
       </Head>
-      <div className="image-container">
+      <div className="content">
         <h1>This is Mochi</h1>
         <h2>He's a good boi</h2>
         <h3>Refresh for random pics</h3>
@@ -26,8 +39,11 @@ const Page = ({ index }) => {
           font-family: 'Lato', sans-serif;
         }
 
-        .image-container {
-          display: block;
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
 
         .image {
@@ -35,6 +51,7 @@ const Page = ({ index }) => {
           max-width: 100%;
           opacity: 1;
           animation: fadeIn 1s;
+          object-fit: contain;
         }
 
         @keyframes fadeIn {
@@ -49,6 +66,7 @@ const Page = ({ index }) => {
         @media only screen and (min-width: 768px) {
           .image {
             max-width: 400px;
+            max-height: 700px;
           }
         }
       `}</style>
