@@ -1,11 +1,14 @@
 import Head from 'next/head'
-import links from '../links';
+import links from '../links'
 
 const Page = ({ index }) => {
   return (
     <div className="root">
       <Head>
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"/>
+        <link
+          href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <div className="image-container">
         <h1>This is Mochi</h1>
@@ -35,8 +38,12 @@ const Page = ({ index }) => {
         }
 
         @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
 
         @media only screen and (min-width: 768px) {
@@ -47,11 +54,11 @@ const Page = ({ index }) => {
       `}</style>
     </div>
   )
-};
-
-Page.getInitialProps = () => {
-  const index = Math.floor(Math.random() * links.length);
-  return { index };
 }
 
-export default Page;
+Page.getInitialProps = () => {
+  const index = Math.floor(Math.random() * links.length)
+  return { index }
+}
+
+export default Page
