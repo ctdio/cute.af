@@ -9,3 +9,6 @@ const files = fs.readdirSync(staticDir)
 const links = files.map(file => `/static/mochi/${file}`)
 
 fs.writeFileSync('links.json', JSON.stringify(links, null, 2), 'utf8')
+
+console.log('Generated the following links:')
+links.map(link => console.log(`  - ${link}`))
