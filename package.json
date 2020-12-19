@@ -6,8 +6,7 @@
   "author": "Charlie Duong",
   "license": "MIT",
   "scripts": {
-    "start": "next start",
-    "dev": "next dev",
+    "start": "next dev",
     "build": "next build",
     "generate:links": "node tools/generateLinks"
   },
