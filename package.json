@@ -13,14 +13,20 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "next": "^12.2.4",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-feather": "^2.0.10",
+    "react-tinder-card": "^1.4.5"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.8",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "postcss": "^8.4.16",
     "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8",
     "vercel": "^27.3.7"
   }
 }

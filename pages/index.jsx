@@ -1,9 +1,12 @@
 import Head from 'next/head'
-import links from '../links'
+import shuffle from 'lodash/shuffle'
 
-const Page = ({ index }) => {
+import { SwipeableCards } from '../components/SwipeableCards'
+import mochiImages from '../links'
+
+const Page = ({ images }) => {
   return (
-    <div className="root">
+    <div className="root bg-gradient-to-r from-purple-500 to-pink-500 p-5">
       <Head>
         <title>cute.af pics of Mochi</title>
         <link
@@ -23,60 +26,19 @@ const Page = ({ index }) => {
           href="/public/favicon-16x16.png"
         />
       </Head>
-      <div className="content">
-        <h1>This is Mochi</h1>
-        <h2>He's a good boi</h2>
-        <h3>Refresh for random pics</h3>
-        <img className="image" src={links[index]} />
+      <div className="flex flex-col justify-center items-center text-slate-100">
+        <h1 className="text-3xl">cute.af</h1>
+        <p>This is Mochi. Swipe for more pics.</p>
       </div>
 
-      <style jsx>{`
-        .root {
-          display: flex;
-          align-self: center;
-          justify-content: center;
-
-          font-family: 'Lato', sans-serif;
-        }
-
-        .content {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .image {
-          flex: 1 1 0;
-          max-width: 100%;
-          opacity: 1;
-          animation: fadeIn 1s;
-          object-fit: contain;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-
-        @media only screen and (min-width: 768px) {
-          .image {
-            max-width: 400px;
-            max-height: 700px;
-          }
-        }
-      `}</style>
+      <SwipeableCards images={images} />
     </div>
   )
 }
 
 Page.getInitialProps = () => {
-  const index = Math.floor(Math.random() * links.length)
-  return { index }
+  const images = shuffle(mochiImages)
+  return { images }
 }
 
 export default Page
