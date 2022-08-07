@@ -7,34 +7,20 @@
   "license": "MIT",
   "scripts": {
     "start": "next dev",
+    "test": "echo 'lmao k'",
     "build": "next build",
-    "generate:links": "node tools/generateLinks"
+    "generate:links": "node tools/generateLinks",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "next": "^10.0.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "next": "^12.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
-    "now": "^21.0.1",
-    "prettier": "^2.2.1",
-    "vercel": "^21.0.1"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false
-  },
-  "lint-staged": {
-    "*.{js,json,jsx}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn generate:links && git add links.json && lint-staged"
-    }
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "vercel": "^27.3.7"
   }
 }
