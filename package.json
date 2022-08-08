@@ -9,6 +9,7 @@
     "start": "next dev",
     "test": "echo 'lmao k'",
     "build": "next build",
+    "deploy": "vercel",
     "generate:links": "node tools/generateLinks",
     "prepare": "husky install"
   },

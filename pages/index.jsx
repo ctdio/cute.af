@@ -37,7 +37,7 @@ const Page = ({ images }) => {
 }
 
 Page.getInitialProps = () => {
-  const images = shuffle(mochiImages)
+  const images = shuffle(mochiImages).slice(0, 5)
   return { images }
 }
 
