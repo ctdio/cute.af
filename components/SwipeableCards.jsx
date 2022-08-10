@@ -9,6 +9,7 @@ export const SwipeableCards = ({ images }) => {
       <div className="absolute flex flex-col justify-center align-center text-xs">
         <a
           href="https://instagram.com/mocheroni"
+          style={{ '-webkit-tap-highlight-color': 'transparent' }}
           className="flex justify-center align-center text-purple-500"
         >
           <button
