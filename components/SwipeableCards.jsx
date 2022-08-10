@@ -16,11 +16,13 @@ export const SwipeableCards = ({ images }) => {
         <p className="mt-5">Refresh to start over!</p>
       </div>
 
-      {images.map((image) => (
-        <TinderCard key={image} className="absolute">
-          <Card image={image} />
-        </TinderCard>
-      ))}
+      <div className="w-64">
+        {images.map((image) => (
+          <TinderCard>
+            <Card key={image} image={image} />
+          </TinderCard>
+        ))}
+      </div>
     </div>
   )
 }
