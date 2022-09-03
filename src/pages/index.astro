@@ -1,0 +1,20 @@
+---
+import shuffle from 'lodash/shuffle'
+
+import Layout from '../layouts/Layout.astro'
+import { SwipeableCards } from '../components/SwipeableCards.jsx'
+import mochiImages from '../../links'
+
+const images = shuffle(mochiImages).slice(0, 5)
+---
+
+<Layout title="cute.af pics of Mochi">
+  <div class="root bg-gradient-to-r from-purple-500 to-pink-500 p-5">
+    <div class="flex flex-col justify-center items-center text-slate-100">
+      <h1 class="text-3xl">cute.af</h1>
+      <p>This is Mochi. Swipe for more pics.</p>
+    </div>
+
+    <SwipeableCards client:load images={images} />
+  </div>
+</Layout>

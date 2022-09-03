@@ -6,14 +6,20 @@
   "author": "Charlie Duong",
   "license": "MIT",
   "scripts": {
-    "start": "next dev",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
     "test": "echo 'lmao k'",
-    "build": "next build",
-    "deploy": "vercel",
+    "deploy": "npm run build && vercel deploy --prebuilt",
     "generate:links": "node tools/generateLinks",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format": "prettier -w ."
   },
   "dependencies": {
+    "@astrojs/react": "^1.1.1",
+    "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/vercel": "^1.0.2",
+    "astro": "^1.1.5",
     "lodash": "^4.17.21",
     "next": "^12.2.4",
     "react": "^17.0.2",
@@ -27,7 +33,8 @@
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
-    "tailwindcss": "^3.1.8",
-    "vercel": "^27.3.7"
+    "prettier-plugin-astro": "^0.5.4",
+    "tailwind": "^4.0.0",
+    "vercel": "^28.2.2"
   }
 }

@@ -9,7 +9,7 @@ export const SwipeableCards = ({ images }) => {
       <div className="absolute flex flex-col justify-center align-center text-xs">
         <a
           href="https://instagram.com/mocheroni"
-          style={{ '-webkit-tap-highlight-color': 'transparent' }}
+          style={{ WebkitTapHighlightColor: 'transparent' }}
           className="flex justify-center align-center text-purple-500"
         >
           <button
@@ -25,8 +25,8 @@ export const SwipeableCards = ({ images }) => {
 
       <div className="w-64">
         {images.map((image) => (
-          <TinderCard>
-            <Card key={image} image={image} />
+          <TinderCard key={image}>
+            <Card image={image} />
           </TinderCard>
         ))}
       </div>
