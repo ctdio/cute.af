@@ -1,6 +1,7 @@
 import mixpanel from 'mixpanel-browser'
 
 const SWIPE_EVENT_NAME = 'Mochi Swipe'
+const INSTAGRAM_CLICK_EVENT_NAME = 'Instagram click'
 
 // Enabling the debug mode flag is useful during implementation,
 // but it's recommended you remove it for production
@@ -17,4 +18,8 @@ type TrackSwipleEventInput = {
 
 export function trackSwipeEvent({ image, direction }: TrackSwipeEventInput) {
   mixpanel.track(SWIPE_EVENT_NAME, { image, direction })
+}
+
+export function registerLinkTracking() {
+  mixpanel.track_links('a#mocheroni-instagram', 'Link click')
 }
