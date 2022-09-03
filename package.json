@@ -11,7 +11,7 @@
     "build": "astro build",
     "type-check": "tsc --noEmit",
     "test": "echo 'lmao k'",
-    "deploy": "npm run build && vercel deploy --prebuilt",
+    "preview": "vercel",
     "generate:links": "node tools/generateLinks",
     "prepare": "husky install",
     "format": "prettier -w ."
