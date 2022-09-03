@@ -3,7 +3,7 @@ import shuffle from 'lodash/shuffle'
 
 import Layout from '../layouts/Layout.astro'
 import { SwipeableCards } from '../components/SwipeableCards.jsx'
-import mochiImages from '../../links'
+import mochiImages from '../../links.json'
 
 const images = shuffle(mochiImages).slice(0, 5)
 ---

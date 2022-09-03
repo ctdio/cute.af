@@ -3,7 +3,16 @@ import { Instagram as InstagramIcon } from 'react-feather'
 
 import { Card } from './Card'
 
-export const SwipeableCards = ({ images }) => {
+import { trackSwipeEvent } from '../analytics'
+
+type Props = {
+  images: string[]
+}
+
+export const SwipeableCards: React.FC<Props> = ({ images }) => {
+  const createOnSwipe = (image: string) => (direction: SwipeDirection) =>
+    trackSwipeEvent({ image, direction })
+
   return (
     <div className="flex justify-center align-center grow mt-10 w-full text-slate-100">
       <div className="absolute flex flex-col justify-center align-center text-xs">
@@ -25,7 +34,8 @@ export const SwipeableCards = ({ images }) => {
 
       <div className="w-64">
         {images.map((image) => (
-          <TinderCard key={image}>
+          // @ts-ignore
+          <TinderCard key={image} onSwipe={createOnSwipe(image)}>
             <Card image={image} />
           </TinderCard>
         ))}

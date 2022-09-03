@@ -2,5 +2,7 @@
 .node_modules/
 .vercel/
 
+.gitignore
 .prettierignore
 .tool-versions
+.env.example
