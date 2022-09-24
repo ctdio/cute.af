@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Charlie Duong",
   "license": "MIT",
+  "packageManager": "pnpm",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
