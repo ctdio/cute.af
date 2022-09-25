@@ -4,14 +4,18 @@ import { Instagram as InstagramIcon } from 'react-feather'
 
 import { Card } from './Card'
 
-import { trackSwipeEvent, registerLinkTracking } from '../analytics'
+import {
+  trackSwipeEvent,
+  registerLinkTracking,
+  SwipeDirection,
+} from '../analytics'
 
 type Props = {
   images: string[]
 }
 
 export const SwipeableCards: React.FC<Props> = ({ images }) => {
-  const linkRef = useRef()
+  const linkRef = useRef(null)
 
   const createOnSwipe = (image: string) => (direction: SwipeDirection) =>
     trackSwipeEvent({ image, direction })

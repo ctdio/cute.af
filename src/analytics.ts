@@ -1,5 +1,7 @@
 import mixpanel from 'mixpanel-browser'
 
+export type SwipeDirection = 'left' | 'right' | 'up' | 'down'
+
 const SWIPE_EVENT_NAME = 'Mochi Swipe'
 const INSTAGRAM_CLICK_EVENT_NAME = 'Instagram click'
 
@@ -10,8 +12,7 @@ mixpanel.init(import.meta.env.PUBLIC_MIXPANEL_PROJECT_TOKEN, {
 })
 mixpanel.track('Visited page')
 
-type SwipeDirection = 'left' | 'right' | 'up' | 'down'
-type TrackSwipleEventInput = {
+type TrackSwipeEventInput = {
   image: string
   direction: SwipeDirection
 }
@@ -21,5 +22,5 @@ export function trackSwipeEvent({ image, direction }: TrackSwipeEventInput) {
 }
 
 export function registerLinkTracking() {
-  mixpanel.track_links('a#mocheroni-instagram', 'Link click')
+  mixpanel.track_links('a#mocheroni-instagram', INSTAGRAM_CLICK_EVENT_NAME)
 }
