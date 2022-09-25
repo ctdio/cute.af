@@ -13,6 +13,7 @@ specifiers:
   lint-staged: ^13.0.3
   lodash: ^4.17.21
   mixpanel-browser: ^2.45.0
+  playwright: ^1.26.0
   postcss: ^8.4.16
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.5.4
@@ -42,6 +43,7 @@ devDependencies:
   autoprefixer: 10.4.12_postcss@8.4.16
   husky: 8.0.1
   lint-staged: 13.0.3
+  playwright: 1.26.0
   postcss: 8.4.16
   prettier: 2.7.1
   prettier-plugin-astro: 0.5.4
@@ -7020,6 +7022,27 @@ packages:
     dependencies:
       find-up: 4.1.0
     dev: false
+
+  /playwright-core/1.26.0:
+    resolution:
+      {
+        integrity: sha512-p8huU8eU4gD3VkJd3DA1nA7R3XA6rFvFL+1RYS96cSljCF2yJE9CWEHTPF4LqX8KN9MoWCrAfVKP5381X3CZqg==,
+      }
+    engines: { node: '>=14' }
+    hasBin: true
+    dev: true
+
+  /playwright/1.26.0:
+    resolution:
+      {
+        integrity: sha512-XxTVlvFEYHdatxUkh1KiPq9BclNtFKMi3BgQnl/aactmhN4G9AkZUXwt0ck6NDAOrDFlfibhbM7A1kZwQJKSBw==,
+      }
+    engines: { node: '>=14' }
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.26.0
+    dev: true
 
   /postcss-import/14.1.0_postcss@8.4.16:
     resolution:
